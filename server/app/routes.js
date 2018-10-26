@@ -1,5 +1,5 @@
 
-module.exports = (app,db) => {
+module.exports = (app, db) => {
     app.get('/', (req, res) => {
         res.send('Hello World');
     });
@@ -25,5 +25,22 @@ module.exports = (app,db) => {
     });
 
     app.post('/delete');
-    app.get('/students');
+    app.post('/signUp', (req, res) => {
+        console.log(req.body.username.value);
+        console.log(req.body.password.value);
+        // db.connect(function (err) {
+        //     if (err) {
+        //         throw err
+        //     };
+        //     console.log("Connected!");
+        //     let query = "INSERT INTO `user`(`username`, `password`) VALUES ([value-2],[value-3])"
+        //     db.query(query, (err, result, fields) => {
+        //         if (err) {
+        //             throw err;
+        //         }
+        //         //console.log(result);
+        //         res.json(result)
+        //     })
+        // });
+    })
 }

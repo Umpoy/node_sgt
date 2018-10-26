@@ -259,6 +259,22 @@ function deleteStudentFromDB(id) {
  */
 
 function createUser() {
+    const info = {
+        username: $('#signup').serializeArray()[0],
+        password: $('#signup').serializeArray()[1]
+    }
+    const hello = { data: 'SEND THIS DATA' }
+    const API_URL = 'http://localhost:5000/signUp';
+    fetch(API_URL, {
+        method: 'post',
+        body: JSON.stringify(info),
+        headers: {
+            'content-type': 'application/json'
+        }
+    }).then(response => response.json()).then((test) => {
+        console.log('SENT DATA!!!!');
+    });
+
 
 }
 
