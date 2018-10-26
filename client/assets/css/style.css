@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+
+a { color: inherit; } 
+
+.container {
+    margin-top: 1%;
+}
+
+.hero{
+    width: 50vw;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+form > input {
+    border-radius: 1%;
+    width: 50%;
+}
+
+form input {
+    margin-bottom: 2% !important;
+}
+
+#login {
+    display: none;
+}
+
+#logout {
+    float: right;
+}
