@@ -33,13 +33,20 @@ module.exports = (app, db) => {
         const hashPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(9))
         console.log(req.body.username.value);
         console.log(hashPassword);
+        console.log(typeof username);
         db.connect(function (err) {
             if (err) {
                 throw err
             };
             console.log("Connected!");
-            // if()
-            // const sql = "INSERT INTO `user`(`username`, `password`) VALUES ('" + username + "','" + hashPassword + "')"
+            let sql = "SELECT `username` FROM `user` WHERE `username`  = " + "'" + username + "'";
+            db.query(sql, function (err, result, fields) {
+                if (err) {
+                    throw err
+                };
+                console.log("username is already taken");
+            });
+            // sql = "INSERT INTO `user`(`username`, `password`) VALUES ('" + username + "','" + hashPassword + "')"
             // db.query(sql, (err, result) => {
             //     if (err) {
             //         throw err;
