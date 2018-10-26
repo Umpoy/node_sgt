@@ -1,4 +1,4 @@
-
+const bcrypt = require('bcryptjs');
 module.exports = (app, db) => {
     app.get('/', (req, res) => {
         res.send('Hello World');
@@ -25,22 +25,27 @@ module.exports = (app, db) => {
     });
 
     app.post('/delete');
+
     app.post('/signUp', (req, res) => {
+        // password => bcrypt.hashSync(password, bcrypt.genSaltSync(9));
+        const username = req.body.username.value;
+        const password = req.body.password.value;
+        const hashPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(9))
         console.log(req.body.username.value);
-        console.log(req.body.password.value);
-        // db.connect(function (err) {
-        //     if (err) {
-        //         throw err
-        //     };
-        //     console.log("Connected!");
-        //     let query = "INSERT INTO `user`(`username`, `password`) VALUES ([value-2],[value-3])"
-        //     db.query(query, (err, result, fields) => {
-        //         if (err) {
-        //             throw err;
-        //         }
-        //         //console.log(result);
-        //         res.json(result)
-        //     })
-        // });
+        console.log(hashPassword);
+        db.connect(function (err) {
+            if (err) {
+                throw err
+            };
+            console.log("Connected!");
+            // if()
+            // const sql = "INSERT INTO `user`(`username`, `password`) VALUES ('" + username + "','" + hashPassword + "')"
+            // db.query(sql, (err, result) => {
+            //     if (err) {
+            //         throw err;
+            //     }
+            //     console.log("Saved to DB");
+            // })
+        });
     })
 }
