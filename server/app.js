@@ -26,8 +26,8 @@ app.use(session({
     resave: true
 }));
 
-app.get('/', (req, res) => {
-    res.send('Hello World');
-});
+require('./app/routes.js')(app);
 
-app.listen(port);
+app.listen(port, () => {
+    console.log("Server started in port " + port);
+});
