@@ -46,6 +46,7 @@ function addClickHandlersToElements() {
     });
     $('.cancel').on('click', handleCancelClick);
     $('.getData').on('click', getData);
+    $('.signUp').on('click', createUser);
 }
 /***************************************************************************************************
  * handleAddClicked - Event Handler when user clicks the add button
@@ -249,6 +250,16 @@ function deleteStudentFromDB(id) {
             console.log("Student Deleted");
         }
     })
+}
+
+/***************************************************************************************************
+ * createUser - create user and adds username and password to database
+ * @param: {id} takes student's id 
+ * @returns {} none
+ */
+
+function createUser() {
+
 }
 
 
