@@ -28,6 +28,7 @@ module.exports = (app, db) => {
 
     app.post('/signUp', (req, res) => {
         // password => bcrypt.hashSync(password, bcrypt.genSaltSync(9));
+        // const username = req.body.username.value;
         const username = req.body.username.value;
         const password = req.body.password.value;
         const hashPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(9))
@@ -44,15 +45,20 @@ module.exports = (app, db) => {
                 if (err) {
                     throw err
                 };
-                console.log("username is already taken");
+                if (result.length > 0) { //username is taken
+                    console.log("username is already taken")
+                } else { //username is valid
+                    sql = "INSERT INTO `user`(`username`, `password`) VALUES ('" + username + "','" + hashPassword + "')"
+                    db.query(sql, (err, result) => {
+                        if (err) {
+                            throw err;
+                        }
+                        console.log("Saved to DB");
+                        res.send('hello')
+                    })
+                }
             });
-            // sql = "INSERT INTO `user`(`username`, `password`) VALUES ('" + username + "','" + hashPassword + "')"
-            // db.query(sql, (err, result) => {
-            //     if (err) {
-            //         throw err;
-            //     }
-            //     console.log("Saved to DB");
-            // })
+
         });
     })
 }

@@ -272,7 +272,7 @@ function createUser() {
             'content-type': 'application/json'
         }
     }).then(response => response.json()).then((test) => {
-        console.log('SENT DATA!!!!');
+        console.log(test);
     });
 
 
