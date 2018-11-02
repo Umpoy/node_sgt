@@ -7,6 +7,8 @@ const port = 5000;
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const morgan = require('morgan');
+const passport = require('passport');
+const flash = require('connect-flash');
 
 const configDB = require('./config/database');
 const db = mysql.createConnection(configDB);
@@ -20,6 +22,9 @@ app.use(session({
     saveUninitialized: true,
     resave: true
 }));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
 
 require('./app/routes.js')(app, db);
 
