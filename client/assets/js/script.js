@@ -254,7 +254,7 @@ function deleteStudentFromDB(id) {
 
 /***************************************************************************************************
  * createUser - create user and adds username and password to database
- * @param: {id} takes student's id 
+ * @param: {}  
  * @returns {} none
  */
 
