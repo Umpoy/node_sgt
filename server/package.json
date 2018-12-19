@@ -1,22 +1,33 @@
 {
-  "name": "node_sgt",
+  "name": "sgt",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "grade table form in node.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Umpoy/node_sgt.git"
+  },
+  "author": "aManlyDev",
   "license": "ISC",
-  "devDependencies": {
+  "bugs": {
+    "url": "https://github.com/Umpoy/node_sgt/issues"
+  },
+  "homepage": "https://github.com/Umpoy/node_sgt#readme",
+  "dependencies": {
     "body-parser": "^1.18.3",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
-    "mongoose": "^5.4.0",
+    "express-session": "^1.15.6",
     "morgan": "^1.9.1",
-    "mysql": "^2.16.0"
-  },
-  "dependencies": {
-    "nodemon": "^1.18.9"
+    "mysql": "^2.16.0",
+    "nodemon": "^1.18.5",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
   }
 }
