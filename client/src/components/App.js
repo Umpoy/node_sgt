@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
+import GoogleAuth from './GoogleAuth';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <h1>React App</h1>
-      </div>
-    );
-  }
+
+const App = () => {
+  return (
+    <div className="App">
+      <h1>React App</h1>
+      <GoogleAuth />
+    </div>
+  );
 }
 
 export default App;
