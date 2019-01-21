@@ -5,7 +5,6 @@ import { signIn, signOut } from '../actions';
 
 class GoogleAuth extends Component {
 
-
     componentDidMount() {
         window.gapi.load('client:auth2', () => {
             window.gapi.client.init({
@@ -40,13 +39,13 @@ class GoogleAuth extends Component {
             return null
         } else if (this.props.isSignedIn) {
             return (
-                <button onClick={this.onSignOut} className="">
+                <button onClick={this.onSignOut} className="btn btn-danger">
                     Sign Out
                 </button>
             )
         } else {
             return (
-                <button onClick={this.onSignIn} className="">
+                <button onClick={this.onSignIn} className="btn btn-danger">
                     Sign In with Google
                 </button>
             )
@@ -55,7 +54,7 @@ class GoogleAuth extends Component {
 
     render() {
         return (
-            <div>{this.renderAuthButton()}</div>
+            <div className="float-right">{this.renderAuthButton()}</div>
         )
     }
 }
