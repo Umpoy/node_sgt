@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './Header';
+import StudentForm from './StudentForm';
 
 
 
@@ -7,7 +8,8 @@ const App = () => {
   return (
     <div className="App container">
       <Header />
-      <hr class="my-4" />
+      <hr className="my-4" />
+      <StudentForm />
     </div>
   );
 }
