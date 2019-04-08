@@ -1,0 +1,24 @@
+{
+  "name": "node_sgt",
+  "version": "1.0.0",
+  "description": "#Technologies: HTML, CSS, JavaScript, Node, Express, MySql",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Umpoy/node_sgt.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Umpoy/node_sgt/issues"
+  },
+  "homepage": "https://github.com/Umpoy/node_sgt#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "mysql": "^2.16.0"
+  }
+}
